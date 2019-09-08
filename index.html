@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Traffic Tool Alpha</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e15575d67d.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+</head>
+
+<body>
+    <div id="background"></div>
+    <main>
+        <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                <div class="container-fluid">
+                    <div class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group" style="width: 90vw;">
+                            <img id="logo" src="res/tt_logo.png">
+                            <input id="location" class="bg-light form-control border-0 small" type="text" placeholder="Where are you?">
+                            <span class="distancesuffix bg-light" style="padding-left: 10px; padding-right: 10px;"><input style="text-align: right; max-width: 100px; padding-right: 10px;" id="radius" min="1" max="999" oninput="checkDist()" class="bg-light form-control border-0 small" type="number" onkeydown="return !(event.keyCode == 69 || event.keyCode == 189 || event.keyCode == 109)" value="5">km</span>
+                            <div class="input-group-append">
+                                <button class="btn btn-primary py-0" type="button" onclick="search()"><i class="fas fa-search"></i></button>
+                                <button class="btn btn-primary py-0" type="button" onclick="getCurrentLocation()"><i class="fas fa-map-marker-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        <section>
+            <div class="top">
+                <h3>Severity Rating</h3>
+                <h1 id="severity-rating"></h1>
+                <canvas id="severity-gauge"></canvas>
+            </div>
+
+            <div class="col col1">
+                <h3>Traffic in Your Area</h3>
+                <table id="resultTable">
+                    <tr>
+                        <th>Road and Hazard</th>
+                        <th id="tblCol1">Severity</th>
+                        <th id="tblCol2">Road Closed</th>
+                    </tr>
+                </table>
+                <p id="results"></p>
+            </div>
+            <div class="col col2">
+                <h3>Find a Route</h3>
+                <div class="mapImages" id="maps">
+                    <div>your content</div>
+                    <div>your content</div>
+                    <div>your content</div>
+                  </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/traffic.js"></script>
+    <script src="js/requests.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <!--
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $('.mapImages').slick({
+            setting-name: setting-value
+          });
+        });
+    </script>-->
+    <!--
+    <footer>
+        <div>made by <tt>dotjam</tt>for govhack 2019</div>
+    </footer>
+</body>
+-->
+
+</html>
